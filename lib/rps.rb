@@ -57,7 +57,7 @@ if $0 == __FILE__
    Rack::Server.start(
      :app => Rack::ShowExceptions.new(
                Rack::Lint.new(
-                 RockPaperScissors::App.new)), 
+                 RockPaperScissors::RPS.new)), 
      :Port => 9292,
      :server => 'thin'
    )

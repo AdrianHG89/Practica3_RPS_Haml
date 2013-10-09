@@ -1,6 +1,6 @@
 desc "run the server"
 task :default do
-  sh "ruby /lib/rps.rb"
+  sh "ruby ./lib/rps.rb"
 end
 
 desc "run the client with rock"
