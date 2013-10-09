@@ -26,27 +26,27 @@ module RockPaperScissors
 				if !@throws.include?(player_throw)
 					"Choose one of the following:"
 				elsif player_throw == computer_throw
-					"You tied with the computer"
+					"Estas salvado, #{player_throw} contra #{computer_throw} es un empate."
 				elsif computer_throw == @defeat[player_throw]
-					"Nicely done; #{player_throw} beats #{computer_throw}"
+					"Muy bien, #{player_throw} gana a #{computer_throw}. ¿Te atreves a seguir jugando?"
 				else
-					"Ouch; #{computer_throw} beats #{player_throw}. Better luck next time!"
+					"Oh has perdido, #{computer_throw} gana a #{player_throw}. Sigue intentandolo, ¡Suerte!"
 				end
-			engine = Haml::Engine.new File.open("views/index.html.haml").read
+			engine = Haml::Engine.new File.open("views/rps.html.haml").read
 			res = Rack::Response.new
+			res.write engine.render({},
+				:anwser => anwser,
+				:choose => @choose,
+				:throws => @throws,
+				:computer_throw => computer_throw,
+				:player_throw => player_throw)
+
 			res.finish
+
+
+
+
+
 		end # End del def call
 	end #End de class
 end #End del module
-  
-if $0 == __FILE__
-    require 'rack'
-    require 'rack/showexceptions'
-    Rack::Server.start(
-      :app => Rack::ShowExceptions.new(
-               Rack::Lint.new(
-                  RockPaperScissors::App.new)), 
-      :Port => 9292,
-      :server => 'thin'
-    )
-end
