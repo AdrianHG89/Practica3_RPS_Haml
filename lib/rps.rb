@@ -50,3 +50,15 @@ module RockPaperScissors
 		end # End del def call
 	end #End de class
 end #End del module
+
+if $0 == __FILE__
+  require 'rack'
+   require 'rack/showexceptions'
+   Rack::Server.start(
+     :app => Rack::ShowExceptions.new(
+               Rack::Lint.new(
+                 RockPaperScissors::App.new)), 
+     :Port => 9292,
+     :server => 'thin'
+   )
+ end
