@@ -1,0 +1,36 @@
+%html
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html'}
+    %title RPS
+  %body
+    %ol
+      %h3 RPS
+      %a{:href => '?choice=rock'} Rock
+      %a{:href => '?choice=paper'} Paper
+      %a{:href => '?choice=scissors'} Scissors
+
+
+    %center
+      %h1 WELCOME TO THE GAME
+      %br
+
+    %center
+      %h2 Player 1
+      - if(player_throw == 'rock')
+        %img{:src => '/public/img/roca.jpg', :alt => 'Rock'}
+      - elsif (player_throw == 'scissors')
+        %img{:src => '/public/img/tijeras.jpg', :alt => 'Scissors'}
+      - elsif (player_throw == 'paper')
+        %img{:src => '/public/img/papel.jpg', :alt => 'Paper'}
+
+      %h2 vs
+      
+      %h2 Player 2
+      - if(computer_throw == 'rock')
+        %img{:src => '/public/img/roca.jpg', :alt => 'Rock'}
+      - elsif (computer_throw == 'scissors')
+        %img{:src => '/public/img/tijeras.jpg', :alt => 'Scissors'}
+      - elsif (computer_throw == 'paper')
+        %img{:src => '/public/img/papel.jpg', :alt => 'Paper'}
+    
+      %h3= anwser
