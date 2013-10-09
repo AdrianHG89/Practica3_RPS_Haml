@@ -5,7 +5,8 @@
   %body
     %ol
       %h3 RPS
-      %a{:href => '?choice=rock'} Rock
+      %a{:href => '?choice=rock'}%img{alt: 'photo rock_zps0ebe7421.jpg', border: '0', height: '250', src: 'http://i1296.photobucket.com/albums/ag1/adrihg89/rock_zps0ebe7421.jpg', width: '250'}
+     
       %a{:href => '?choice=paper'} Paper
       %a{:href => '?choice=scissors'} Scissors
 
@@ -17,20 +18,20 @@
     %center
       %h2 Player 1
       - if(player_throw == 'rock')
-        %img{:src => 'http://i1296.photobucket.com/albums/ag1/adrihg89/rock_zps0ebe7421.jpg', :alt => 'Rock'}
+        %img{:src => 'http://i1296.photobucket.com/albums/ag1/adrihg89/rock_zps0ebe7421.jpg', :alt => 'Rock', height: '250', width: '250'}
       - elsif (player_throw == 'scissors')
-        %img{:src => 'http://i1296.photobucket.com/albums/ag1/adrihg89/tijeras_zps543ca9ac.jpg', :alt => 'Scissors'}
+        %img{:src => 'http://i1296.photobucket.com/albums/ag1/adrihg89/tijeras_zps543ca9ac.jpg', :alt => 'Scissors', height: '250', width: '250'}
       - elsif (player_throw == 'paper')
-        %img{:src => 'http://i1296.photobucket.com/albums/ag1/adrihg89/paper_zpse0ed0ca5.jpg', :alt => 'Paper'}
+        %img{:src => 'http://i1296.photobucket.com/albums/ag1/adrihg89/paper_zpse0ed0ca5.jpg', :alt => 'Paper', height: '250', width: '250'}
 
       %h2 vs
       
       %h2 Player 2
       - if(computer_throw == 'rock')
-        %img{:src => 'http://i1296.photobucket.com/albums/ag1/adrihg89/rock_zps0ebe7421.jpg', :alt => 'Rock'}
+        %img{:src => 'http://i1296.photobucket.com/albums/ag1/adrihg89/rock_zps0ebe7421.jpg', :alt => 'Rock', height: '250', width: '250'}
       - elsif (computer_throw == 'scissors')
-        %img{:src => 'http://i1296.photobucket.com/albums/ag1/adrihg89/tijeras_zps543ca9ac.jpg', :alt => 'Scissors'}
+        %img{:src => 'http://i1296.photobucket.com/albums/ag1/adrihg89/tijeras_zps543ca9ac.jpg', :alt => 'Scissors', height: '250', width: '250'}
       - elsif (computer_throw == 'paper')
-        %img{:src => 'http://i1296.photobucket.com/albums/ag1/adrihg89/paper_zpse0ed0ca5.jpg', :alt => 'Paper'}
+        %img{:src => 'http://i1296.photobucket.com/albums/ag1/adrihg89/paper_zpse0ed0ca5.jpg', :alt => 'Paper', height: '250', width: '250'}
     
       %h3= anwser
