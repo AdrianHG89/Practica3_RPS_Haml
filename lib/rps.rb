@@ -24,7 +24,7 @@ module RockPaperScissors
 			player_throw = req.GET["choice"]
 			anwser =
 				if !@throws.include?(player_throw)
-					"Choose one of the following:"
+					"Realiza tu jugada."
 				elsif player_throw == computer_throw
 					"Estas salvado, #{player_throw} contra #{computer_throw} es un empate."
 				elsif computer_throw == @defeat[player_throw]
