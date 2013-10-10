@@ -1,7 +1,8 @@
-!!! 5
+!!!
 %html
 	%head
 		%title Practica - Rock, Paper and Scissors
+		%meta{content: "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
 		:css
 			BODY {
 				font: 8pt Verdana, Geneva, Arial, Helvetica, sans-serif;
@@ -20,6 +21,8 @@
 				font-size:12pt;
 				font-weight: bold;
 				padding: 3 3 3 10px;
+				heigh: 400px;
+
 			}
 			#cuerpo{
 				margin: 10 0 10 0px;
@@ -45,16 +48,26 @@
 				padding: 3 10 3 10px;
 				text-align:right;   
 				clear: both;
+				margin-top: 230px;
+			}
+			.enlaceboton{
+				font-family: verdana, arial, sans-serif;
+				font-size: 20pt;
+				font-weight: bold;
+				background-color: #424242;
+				color: white;
+				text-decoration: none;
+				margin-top: 100px;
 			}
 	%body
 		#contenedor
 			#cabecera
 				Practica 3 - Rock, Paper and Scissors
 				%ol
-					%h3 RPS
-					%a{:href => '?choice=rock'} Rock
-					%a{:href => '?choice=paper'} Paper
-					%a{:href => '?choice=scissors'} Scissors
+					%h3 Elige aqui piedra, papel o tijera...
+					%a.enlaceboton{:href => '?choice=rock'} Piedra					
+					%a.enlaceboton{:href => '?choice=paper'} Papel
+					%a.enlaceboton{:href => '?choice=scissors'} Tijera
 			#cuerpo
 				#lateral
 					%h2 Persona:
@@ -83,6 +96,7 @@
 				#principa
 					%center
 						%h1 Vs.
-				%h3= anwser
+				%center
+					%h3= anwser
 			#pie
 				© 2013 Sistemas y Tecnologias Web - ETSII
