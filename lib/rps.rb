@@ -11,17 +11,12 @@ module RockPaperScissors
 			@content_type = :html
 			@defeat = {'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper'}
 			@throws = @defeat.keys
-			@choose = @throws.map { |x| 
-				%Q{ <li><a href="/?choice=#{x}">#{x}</a></li> }
-			}.join("\n")
-       			@choose = "<p>\n<ul>\n#{@choose}\n</ul>"
 		end #Ende del def initialize
   
 		def call(env)
 			req = Rack::Request.new(env)
- 			req.env.keys.sort.each { |x| puts "#{x} => #{req.env[x]}" }
 			computer_throw = @throws.sample
-			player_throw = req.GET["choice"]
+			player_throw = req.GET["jugada"]
 			anwser =
 				if !@throws.include?(player_throw)
 					"Realiza tu jugada."
@@ -36,7 +31,6 @@ module RockPaperScissors
 			res = Rack::Response.new
 			res.write engine.render({},
 				:anwser => anwser,
-				:choose => @choose,
 				:throws => @throws,
 				:computer_throw => computer_throw,
 				:player_throw => player_throw)
@@ -52,13 +46,11 @@ module RockPaperScissors
 end #End del module
 
 if $0 == __FILE__
-  require 'rack'
-   require 'rack/showexceptions'
-   Rack::Server.start(
-     :app => Rack::ShowExceptions.new(
-               Rack::Lint.new(
-                 RockPaperScissors::RPS.new)), 
-     :Port => 9292,
-     :server => 'thin'
-   )
- end
+	require 'rack'
+	require 'rack/showexceptions'
+	Rack::Server.start(
+		:app => Rack::ShowExceptions.new(Rack::Lint.new(RockPaperScissors::RPS.new)), 
+     		:Port => 9292,
+     		:server => 'thin'
+ 	)
+end
