@@ -10,3 +10,5 @@ hola
 ~~~~
 
 'hola'
+
+`<code> printf() </code>`
