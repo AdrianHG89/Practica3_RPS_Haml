@@ -47,3 +47,13 @@ This is [an example][id] reference-style link.
 
 
 This is [caca][id] reference-style link.
+
+<html>
+	<head>
+		<title> Prueba </title>
+	</head>
+	<body>
+		<h1> HOLA MUNDO! </h1>
+	</body>
+</html>
+
