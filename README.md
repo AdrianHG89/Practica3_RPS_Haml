@@ -34,7 +34,7 @@ Esto es H2
 
 
 [Con titulo] (htpp://google.es)
-[Sin titulo] (htpp://google.es)
+[] (htpp://google.es)
 
 caca _caca
 
