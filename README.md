@@ -41,4 +41,6 @@ _hola como estas
 
 Hola [como] (htpp://www.google.es) estas
 
+This is [an example][id] reference-style link.
+
 
